@@ -1,1 +1,28 @@
-hoello?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://meet.jit.si/external_api.js"></script>
+</head>
+<body>
+    <button onclick="junta()">Click me</button> 
+    <div id='meet'style="position: absolute; left: 0; top: 0; z-index: 1;"></div>
+
+<script>
+function junta(){console.log("clicked junta")}
+var domain = "meet.jit.si";
+var options = {
+    roomName: "JitsiMeetAPIExampleByPaxitoExporVirtual",
+    width: 700,
+    height: 700,
+    parentNode: document.querySelector('#meet')
+}
+var api = new JitsiMeetExternalAPI(domain, options);
+
+api.executeCommand('displayName', 'Paxo Peregrina')
+   
+</script>
+</body>
+</html>
